@@ -2,6 +2,8 @@ package com.fastu.fastu.Controladores;
 
 import com.fastu.fastu.Modelo.Cliente;
 import com.fastu.fastu.fachada.PerfilFachada;
+import com.fastu.fastu.memento.CaretakerCliente;
+import com.fastu.fastu.memento.OriginatorCliente;
 import com.fastu.fastu.observador.Observador;
 import com.fastu.fastu.observador.SujetoObservable;
 import javafx.event.ActionEvent;
@@ -19,6 +21,7 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
     String contrasena = registro.getPw();
     ArrayList<Cliente> clientes = new ArrayList();
     Cliente objeto = null;
+    Cliente cliente;
     Stage stage;
     private ArrayList<Observador> observadores = new ArrayList();
     @FXML
@@ -27,6 +30,9 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
     private TextField Correo;
     @FXML
     private TextField Contrasena;
+
+    CaretakerCliente caretaker = new CaretakerCliente();
+    OriginatorCliente originatorCliente = new OriginatorCliente();
 
     @Override
     public void setStage(Stage stage) {
@@ -82,7 +88,14 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
             this.correo = CorreoNuevo;
             this.contrasena = ContrasenaNueva;
 
+            cliente.setNombreCompleto(NombreNuevo);
+            cliente.setCorreo(CorreoNuevo);
+            cliente.setContrasena(ContrasenaNueva);
+
         }
+
+        originatorCliente.setEstado(cliente);
+        caretaker.addMemento(originatorCliente.guardar());
     }
 
     public void MostrarDatos() {

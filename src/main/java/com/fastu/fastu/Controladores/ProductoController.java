@@ -2,6 +2,8 @@ package com.fastu.fastu.Controladores;
 
 import com.fastu.fastu.Modelo.Producto;
 import com.fastu.fastu.comando.IOperacion;
+import com.fastu.fastu.memento.CaretakerProducto;
+import com.fastu.fastu.memento.OriginatorProducto;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -21,6 +23,9 @@ public class ProductoController implements Controller, IOperacion {
     @FXML
     private TextField precio;
 
+    CaretakerProducto caretaker = new CaretakerProducto();
+    OriginatorProducto originator= new OriginatorProducto();
+
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -33,6 +38,9 @@ public class ProductoController implements Controller, IOperacion {
         imagenProducto.setStroke(Color.SEAGREEN);
         Image im = new Image("com/fastu/fastu/Imagenes Tiendas/" + this.producto.getImagen(), false);
         imagenProducto.setFill(new ImagePattern((im)));
+
+        originator.setEstado(producto);
+        caretaker.addMemento(OriginatorProducto.guardar());
     }
 
     @Override

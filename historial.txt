@@ -2,3 +2,7 @@
 2022/11/26,Tarjeta,En trayecto,Jose
 2022/11/26,Tarjeta,En trayecto,Jose
 2022/11/26,Tarjeta,En trayecto,Jose
+2022/11/27,Tarjeta,Cancelado,LOKO
+2022/11/27,Tarjeta,Cancelado,LOKO
+2022/11/27,Tarjeta,Entregado,LOKO
+2022/11/27,Tarjeta,En trayecto,LOKO
