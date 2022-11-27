@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="667.0" prefWidth="375.0" style="-fx-background-color: #27508E;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastu.fastu.Controladores.RegistroController">
+   <children>
+      <Label layoutX="36.0" layoutY="363.0" prefHeight="27.0" prefWidth="174.0" text="Correo Institucional" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Pane layoutY="-1.0" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #DEB937;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="68.0" layoutX="229.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes%20Default/Logo%20Javeriana.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="132.0" layoutX="64.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes%20Default/LogoFastU.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="109.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro" wrappingWidth="149.0">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="31.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuentanos sobre ti, los datos serán contrastados con los proporcionados por tu universidad" wrappingWidth="320.1666679382323">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="34.0" layoutY="438.0" text="Contraseña" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="BotonRegistrar" layoutX="72.0" layoutY="568.0" mnemonicParsing="false" onAction="#BotonRegistrar" prefHeight="47.0" prefWidth="232.0" style="-fx-background-color: #DEB937; -fx-background-radius: 50px;" text="Registrarse" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font>
+         <padding>
+            <Insets bottom="2.0" />
+         </padding>
+      </Button>
+      <Label layoutX="34.0" layoutY="288.0" text="Nombre " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="Correo" layoutX="36.0" layoutY="390.0" prefHeight="37.0" prefWidth="302.0" />
+      <TextField fx:id="NombreCompleto" layoutX="34.0" layoutY="315.0" prefHeight="37.0" prefWidth="302.0" />
+      <PasswordField fx:id="Contrasena" layoutX="35.0" layoutY="465.0" prefHeight="37.0" prefWidth="302.0" />
+   </children>
+</AnchorPane>

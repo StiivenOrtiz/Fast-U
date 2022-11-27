@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="375.0" style="-fx-background-color: #1A557D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastu.fastu.Controladores.PagoController">
+   <children>
+      <AnchorPane prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: DEB937;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="68.0" layoutX="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes%20Default/Logo%20Javeriana.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="132.0" layoutX="74.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes%20Default/LogoFastU.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="idRealizarPedido" layoutX="209.0" layoutY="610.0" mnemonicParsing="false" onAction="#eventRealizarPedido" prefHeight="31.0" prefWidth="143.0" style="-fx-background-color: DEB937;" text="REALIZAR PEDIDO" />
+      <Button fx:id="idCancelar" layoutX="17.0" layoutY="610.0" mnemonicParsing="false" onAction="#eventCancelar" prefHeight="31.0" prefWidth="143.0" text="CANCELAR" />
+      <Label layoutX="52.0" layoutY="97.0" prefHeight="27.0" prefWidth="51.0" text="TOTAL" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="208.0" prefHeight="25.0" prefWidth="185.0" text="DIRECCIÓN DE ENTREGA:" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="323.0" prefHeight="22.0" prefWidth="185.0" text="DESCRIPCIÓN · 15 min" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <ChoiceBox fx:id="idMetodoPago" layoutX="18.0" layoutY="524.0" minHeight="0.0" prefHeight="31.0" prefWidth="143.0" />
+      <TextField fx:id="idDinero" alignment="TOP_CENTER" layoutX="204.0" layoutY="524.0" prefHeight="31.0" prefWidth="153.0" promptText="Cambio para...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idTarjeta" alignment="TOP_CENTER" layoutX="204.0" layoutY="564.0" prefHeight="31.0" prefWidth="153.0" promptText="Añadir tarjeta...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="11.0" layoutY="258.0" prefHeight="21.0" prefWidth="83.0" text="NOTAS: " textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="91.0" fitWidth="89.0" layoutX="153.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ImgPedirFavor/Jorge.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_CENTER" layoutX="123.0" layoutY="175.0" prefHeight="36.0" prefWidth="125.0" text="Jorge Chantryt" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idDescripcion" alignment="TOP_LEFT" layoutX="15.0" layoutY="353.0" prefHeight="75.0" prefWidth="346.0" />
+      <Button fx:id="idEditar" layoutX="152.0" layoutY="435.0" mnemonicParsing="false" onAction="#eventEditar" prefHeight="27.0" prefWidth="89.0" style="-fx-background-color: DEB937;" text="EDITAR" />
+      <TextField fx:id="idDireccion" layoutX="52.0" layoutY="233.0" minHeight="0.0" prefHeight="25.0" prefWidth="311.0" />
+      <TextField fx:id="idNotas" layoutX="52.0" layoutY="279.0" minHeight="0.0" prefHeight="27.0" prefWidth="311.0">
+         <font>
+            <Font size="9.0" />
+         </font></TextField>
+      <Label alignment="TOP_CENTER" layoutX="37.0" layoutY="124.0" prefHeight="31.0" prefWidth="62.0" text="\$3.000" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="239.0" layoutY="97.0" prefHeight="27.0" prefWidth="83.0" text="SERVICIO" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="241.0" layoutY="124.0" prefHeight="31.0" prefWidth="62.0" text="\$3.000" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Line endX="457.0" endY="-2.4437904357910156E-6" layoutX="-101.0" layoutY="476.0" scaleY="2.0" startX="118.0" startY="-8.344650268554688E-7" stroke="WHITE" strokeWidth="3.0" />
+      <Label layoutX="19.0" layoutY="484.0" prefHeight="31.0" prefWidth="143.0" text="MÉTODO DE PAGO" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label fx:id="idMensajes" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="426.0" prefHeight="22.0" prefWidth="112.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="8.0" />
+         </font></Label>
+      <Line endX="457.0" endY="-2.4437904357910156E-6" layoutX="-102.0" layoutY="317.0" startX="118.0" startY="-8.344650268554688E-7" stroke="WHITE" strokeWidth="6.0" />
+      <Line endX="457.0" endY="-2.4437904357910156E-6" layoutX="-103.0" layoutY="207.0" startX="118.0" startY="-8.344650268554688E-7" stroke="WHITE" strokeWidth="6.0" />
+      <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="168.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ImgPago/Efectivo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="167.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ImgPago/Tarjeta.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

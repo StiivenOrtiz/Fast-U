@@ -1,0 +1,11 @@
+Papeleria,jcamilo-chantryt@javeriana.edu.co,Papeleria Manduco,5,2000,5,PapeleriaManduco.png,3
+Kilometrico Papeleria Esferoretractil Negro X 12 Und,12255,Esfero kilometrico retractil negro X 12 UND,Esferos.png
+Papelería Separador Cartulina X 5 Colores, 4200,Papelería Separador Cartulina x 5 colores,SeparadorCartulina.png
+Kingston Memoria Usb 16Gs,24000,Memoria MIcro USB 16 Kingston,Memoria.png
+Restaurante,visantiago@javeriana.edu.co,L’Angolo de Gigi,5,4000,10,LAngolodeGigi.png,3
+Churrasco,33000,Churrasco con papas y gaseosa de uva,Churrasco.png
+Milanesa Clasica,17900,Milanesa Clasica con papas y ensalada aleatoria,Milanesa.png
+Carne de Res,22000,Carne de res con papa yuca y arepa,CarneRes.png
+Tienda,screyb@javeriana.edu.co,Don Santi,4.9,500,5,DonSanti.png,2
+Trululu Gomitas Dulces Edición Franki,3000,Nuestro personaje más esperado del año ha llegado para llenarnos de diversión y sabor en esta escalofriante temporada de Halloween con sus deliciosas gomitas de cerebros rellenas. Pruébalas y endúlzate en cualquier momento del día.,Trululu.png
+Frutiño Bebida en Polvo Sabor Mora Dulce,600,Prepara una deliciosa bebida sabor a mora dulce fuente de vitaminas A-C-B3-B5-B9. Disfrútala sola o con tus comidas favoritas.,Frutinio.png
