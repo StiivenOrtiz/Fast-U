@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+
+/*creador factory de pantallas y controllers */
 public interface CargadorPantallas {
     static void cargarPantalla(Stage stage, String nombrePantalla) throws IOException {
         Controller controller;

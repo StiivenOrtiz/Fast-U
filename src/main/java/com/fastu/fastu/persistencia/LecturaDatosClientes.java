@@ -7,7 +7,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class LecturaDatosClientes {
+
+    /**
+     *
+     * @param correo
+     * @param contrasena
+     * @return Booleano, en caso de true significa que encontró el usuario y contraseña ingresados, de lo contrario un false que indica que no se encontró
+     * @throws IOException
+     */
     public boolean buscarCliente(String correo, String contrasena) throws IOException {
         boolean encontrado = false;
         BufferedReader lector;

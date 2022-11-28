@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/*Interfaz*/
 public interface Controller {
     static void cargarPantalla(String nombrePantalla, Stage stageActual) {
         try {

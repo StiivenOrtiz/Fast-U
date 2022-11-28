@@ -61,6 +61,10 @@ public class ActualizarDatos {
         return false;
     }
 
+    /**
+     * guarda los da
+     * @param clientes
+     */
     public void guardarDatos(ArrayList<Cliente> clientes) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(Constantes.nombreDatosClientes));

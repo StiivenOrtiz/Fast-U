@@ -23,6 +23,8 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
     Cliente objeto = null;
     Cliente cliente;
     Stage stage;
+    CaretakerCliente caretaker = new CaretakerCliente();
+    OriginatorCliente originatorCliente = new OriginatorCliente();
     private ArrayList<Observador> observadores = new ArrayList();
     @FXML
     private TextField NombreCompleto;
@@ -30,9 +32,6 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
     private TextField Correo;
     @FXML
     private TextField Contrasena;
-
-    CaretakerCliente caretaker = new CaretakerCliente();
-    OriginatorCliente originatorCliente = new OriginatorCliente();
 
     @Override
     public void setStage(Stage stage) {

@@ -22,6 +22,11 @@ public interface Constantes {
     /*NOMBRES CONSTANTES PARA LAS IMAGENES USADAS*/
     String logo = "logo.png";
 
+    /**
+     *
+     * @param nombrePantalla
+     * @return el nombre del archivo.fxml de la pantalla que se le pasa por parametro
+     */
     static String obtenerFXML(String nombrePantalla) {
         switch (nombrePantalla) {
             case "Menu" -> {

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Cliente extends Datos {
 
     private ArrayList<Pedido> Pedidos;
-
     public Cliente(String nombresCompletos, String correo, String contrasena, ArrayList<Pedido> pedidos) {
         super(nombresCompletos, correo, contrasena);
         this.Pedidos = pedidos;
@@ -14,6 +13,12 @@ public class Cliente extends Datos {
     public Cliente(String nombresCompletos, String correo, String contrasena) {
         super(nombresCompletos, correo, contrasena);
     }
+
+    public Cliente() {
+        super();
+    }
+
+
 
     public ArrayList<Pedido> getPedidos() {
         return Pedidos;

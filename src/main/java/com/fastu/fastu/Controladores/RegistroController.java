@@ -36,6 +36,10 @@ public class RegistroController implements Controller {
         pw = Contrasena.getText();
     }
 
+    /**
+     * para el boton de registrar, si este se logra registrar cambia a la pantalla de menu, de lo contrario se le notifica al usuario
+     * @param event
+     */
     @FXML
     void BotonRegistrar(ActionEvent event) {
         obtenerDatos();
@@ -53,6 +57,10 @@ public class RegistroController implements Controller {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return Nombre;
     }
@@ -69,6 +77,10 @@ public class RegistroController implements Controller {
         RegistroController.correo = correo;
     }
 
+    /**
+     *
+     * @return contraseña
+     */
     public String getPw() {
         return pw;
     }

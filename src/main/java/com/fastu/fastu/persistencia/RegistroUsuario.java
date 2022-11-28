@@ -8,6 +8,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class RegistroUsuario {
+    /**
+     *
+     * @param nombre
+     * @param correo
+     * @param contrasena
+     * @return el estado del usuario registrado, true para confirmar el registro en el txt, false para lo contrario
+     * @throws IOException
+     */
     public boolean registrarUsuario(String nombre, String correo, String contrasena) throws IOException {
         File archivo = new File(Constantes.nombreDatosClientes);
         if (archivo.exists()) {
@@ -28,6 +36,15 @@ public class RegistroUsuario {
         }
     }
 
+    /**
+     *
+     * @param archivo
+     * @param nombre
+     * @param correo
+     * @param contrasena
+     * @return true para confirmar que se pudo crear el archivo de los datos de los clientes, false lo contrario
+     * @throws IOException
+     */
     private boolean crearArchivoDatosPersonales(File archivo, String nombre, String correo, String contrasena) throws IOException {
         try {
             archivo.createNewFile();

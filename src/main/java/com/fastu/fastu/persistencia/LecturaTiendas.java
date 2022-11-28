@@ -11,6 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LecturaTiendas {
+    /**
+     *
+     * @return lista de los productos de cada tienda
+     * @throws IOException
+     */
     public ArrayList<Tienda> cargarTiendas() throws IOException {
         ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
         try {

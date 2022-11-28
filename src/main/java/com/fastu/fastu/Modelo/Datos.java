@@ -11,6 +11,10 @@ public abstract class Datos {
         this.contrasena = contrasena;
     }
 
+    public Datos() {
+
+    }
+
     public String getContrasena() {
         return contrasena;
     }

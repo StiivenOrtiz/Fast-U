@@ -1,7 +1,7 @@
 package com.fastu.fastu.Controladores;
 
 import com.fastu.fastu.Modelo.Producto;
-import com.fastu.fastu.comando.IOperacion;
+//import com.fastu.fastu.comando.IOperacion;
 import com.fastu.fastu.memento.CaretakerProducto;
 import com.fastu.fastu.memento.OriginatorProducto;
 import javafx.fxml.FXML;
@@ -12,19 +12,18 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class ProductoController implements Controller, IOperacion {
+public class ProductoController implements Controller {
 
     Producto producto;
     Stage stage;
+    CaretakerProducto caretaker = new CaretakerProducto();
+    OriginatorProducto originator = new OriginatorProducto();
     @FXML
     private Circle imagenProducto;
     @FXML
     private TextField nombreProducto;
     @FXML
     private TextField precio;
-
-    CaretakerProducto caretaker = new CaretakerProducto();
-    OriginatorProducto originator= new OriginatorProducto();
 
     @Override
     public void setStage(Stage stage) {
@@ -41,12 +40,6 @@ public class ProductoController implements Controller, IOperacion {
 
         originator.setEstado(producto);
         caretaker.addMemento(OriginatorProducto.guardar());
-    }
-
-    @Override
-    public void execute(){
-        String nomProducto = producto.getNombre();
-        producto.setNombre(nomProducto);
     }
 
 }

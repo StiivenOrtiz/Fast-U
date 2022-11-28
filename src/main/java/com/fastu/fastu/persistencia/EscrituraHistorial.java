@@ -9,6 +9,14 @@ import java.util.Iterator;
 
 public class EscrituraHistorial {
 
+    /**
+     * Agrega al txt el pedido realizado por un cliente en especifico
+     * @param fecha
+     * @param tipoPago
+     * @param estado
+     * @param correoSolicitante
+     * @throws IOException
+     */
     public void agregarHistorial(String fecha, String tipoPago, String estado, String correoSolicitante) throws IOException {
         File archivo = new File(Constantes.nombreHistorial);
         if (archivo.exists()) {
@@ -28,6 +36,15 @@ public class EscrituraHistorial {
         }
     }
 
+    /**
+     * crea el archivo para guardar el historial con los datos del primer cliente y pedido
+     * @param archivo
+     * @param fecha
+     * @param tipoPago
+     * @param estado
+     * @param correoSolicitante
+     * @throws IOException
+     */
     private void crearArchivoHistorial(File archivo, String fecha, String tipoPago, String estado, String correoSolicitante) throws IOException {
         try {
             archivo.createNewFile();

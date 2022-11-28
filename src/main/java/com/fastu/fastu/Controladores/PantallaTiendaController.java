@@ -48,10 +48,15 @@ public class PantallaTiendaController implements Controller {
         this.stage = stage;
     }
 
+    /**
+     * para el boton volver, cambia de pantalla al menu
+     * @param event
+     */
     @FXML
     void regresar(ActionEvent event) {
         Controller.cargarPantalla("Menu", this.stage);
     }
+
 
     public void cargarTienda(Tienda tienda) {
         this.tienda = tienda;

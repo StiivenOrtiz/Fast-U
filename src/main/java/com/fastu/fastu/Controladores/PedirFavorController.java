@@ -31,11 +31,19 @@ public class PedirFavorController implements Controller {
     }
 
 
+    /**
+     * para el boton devolver, cambia de pantalla al menu
+     * @param event
+     */
     @FXML
     void Devolverse(ActionEvent event) {
         Controller.cargarPantalla("Menu", this.stage);
     }
 
+    /**
+     * para el boton, cambia de pantalla a pago
+     * @param event
+     */
     @FXML
     void BotonRegistrar(ActionEvent event) {
         Controller.cargarPantalla("Pago", this.stage);

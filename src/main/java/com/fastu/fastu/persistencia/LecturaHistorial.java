@@ -21,7 +21,7 @@ public class LecturaHistorial {
                 String linea = datosini.nextLine();
                 String[] pedazo = linea.split(",");
                 if (pedazo[3].equals(correo)) {
-                    datosObtenidos.add(new Pedido(pedazo[0], pedazo[1], pedazo[2]));
+                    datosObtenidos.add(new Pedido(pedazo[0], pedazo[1], pedazo[2], pedazo[3]));
                 }
             }
             return datosObtenidos;

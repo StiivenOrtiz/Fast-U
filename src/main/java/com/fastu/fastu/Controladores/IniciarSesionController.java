@@ -31,6 +31,9 @@ public class IniciarSesionController implements Controller {
         this.stage = stage;
     }
 
+    /**
+     * toma el correo y contraseña ingresadas, llama a la fachada de usuarios
+     */
     public void leerArchivo() {
         String correo = idCorreo.getText();
         String contrasena = idContrasena.getText();
@@ -50,10 +53,17 @@ public class IniciarSesionController implements Controller {
     }
 
     @FXML
+    /**
+     * para el boton "iniciar sesion"
+     */
     void accionIniciarSesion(ActionEvent event) {
         leerArchivo();
     }
 
+    /**
+     * cambia de pantalla
+     * @param event
+     */
     @FXML
     void irRegistro(ActionEvent event) {
         Controller.cargarPantalla("Registro", this.stage);

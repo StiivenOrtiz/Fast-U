@@ -46,6 +46,7 @@ public class HistorialController implements Controller, Observador {
         actualizarHistorial();
     }
 
+
     @FXML
     private void BotonEliminar(ActionEvent event) throws IOException {
         cargarHistorial();

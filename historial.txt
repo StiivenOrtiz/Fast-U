@@ -6,3 +6,6 @@
 2022/11/27,Tarjeta,Cancelado,LOKO
 2022/11/27,Tarjeta,Entregado,LOKO
 2022/11/27,Tarjeta,En trayecto,LOKO
+27/08/2022,Efectivo,Cancelado,test@test.com
+27/08/2022,Efectivo,Cancelado,test@test.com
+27/11/2022,Efectivo,Cancelado,test@testE.com

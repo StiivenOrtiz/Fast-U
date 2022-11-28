@@ -1,7 +1,7 @@
 package com.fastu.fastu.Controladores;
 
 import com.fastu.fastu.Modelo.Pedido;
-import com.fastu.fastu.comando.IOperacion;
+//import com.fastu.fastu.comando.IOperacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 
-public class PagoController extends ControllerAuxPago implements Initializable, IOperacion {
+public class PagoController extends ControllerAuxPago implements Initializable {
     private final String[] metodosPago = {"Efectivio", "Tarjeta"};
     PedirFavorController pedirFavorController;
     String tipoPagoAUX = null;

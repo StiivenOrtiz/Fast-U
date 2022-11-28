@@ -17,11 +17,19 @@ public class IniciarController implements Controller {
         this.stage = stage;
     }
 
+    /**
+     * para el boton "iniciar sesion" cambia de pantalla a iniciar sesion
+     * @param event
+     */
     @FXML
     void ClickIniciarSesion(ActionEvent event) {
         Controller.cargarPantalla("IniciarSesion", this.stage);
     }
 
+    /**
+     * para el boton "registrar" cambia de pantalla a registro
+     * @param event
+     */
     @FXML
     void ClickRegistrar(ActionEvent event) {
         Controller.cargarPantalla("Registro", this.stage);
