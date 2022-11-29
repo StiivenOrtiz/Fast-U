@@ -45,5 +45,37 @@
 27/11/2022,Efectivo,Cancelado,test@javeriana.com
 2022/11/29,Tarjeta,En trayecto,prueba@javeriana.com
 2022/11/29,Tarjeta,Cancelado,prueba@javeriana.com
-27/08/2022,Efectivo,Cancelado,test@javeriana.edu.co
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,No realizado,prueba@javeriana.com
+2022/11/29,Tarjeta,En preparación,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,En trayecto,prueba@javeriana.com
+2022/11/29,Tarjeta,No realizado,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,No realizado,prueba@javeriana.com
+2022/11/29,Tarjeta,Cancelado,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,En trayecto,prueba@javeriana.com
+2022/11/29,Tarjeta,En trayecto,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,En preparación,prueba@javeriana.com
+2022/11/29,Tarjeta,No realizado,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+27/11/2022,Efectivo,Cancelado,test@javeriana.com
+2022/11/29,Tarjeta,En trayecto,prueba@javeriana.com
+2022/11/29,Tarjeta,Cancelado,prueba@javeriana.com
+27/08/2022,Efectivo,Cancelado,test2@javeriana.edu.co
 27/11/2022,Efectivo,Cancelado,test@javeriana.com

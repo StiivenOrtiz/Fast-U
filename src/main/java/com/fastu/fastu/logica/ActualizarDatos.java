@@ -9,7 +9,6 @@ import com.fastu.fastu.observador.Observador;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.StringTokenizer;
 
 /**
@@ -61,7 +60,9 @@ public class ActualizarDatos {
         RegistroController registro = new RegistroController();
         HistorialController historial = new HistorialController();
         PerfilUsuarioController perfil = new PerfilUsuarioController();
+
         for (Cliente clients : clientes) {
+
             if ((clients.getNombreCompletos().equals(nombre) && !nombre.equals(NombreNuevo)) ||
                     (clients.getCorreo().equals(correo) && !correo.equals(CorreoNuevo)) ||
                     (clients.getContrasena().equals(contrasena) && !contrasena.equals(ContrasenaNueva))) {
@@ -90,11 +91,14 @@ public class ActualizarDatos {
     public void guardarDatos(ArrayList<Cliente> clientes) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(Constantes.nombreDatosClientes));
-            Iterator iterador = clientes.iterator();
-            while (iterador.hasNext()) {
-                Cliente n = (Cliente) iterador.next();
-                bw.write(n.getNombreCompletos() + "," + n.getCorreo() + "," + n.getContrasena() + "\n");
-            }
+            clientes.forEach(n ->
+            {
+                try {
+                    bw.write(n.getNombreCompletos() + "," + n.getCorreo() + "," + n.getContrasena() + "\n");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
             bw.close();
             System.out.println("cerrado");
         } catch (IOException e) {
@@ -108,8 +112,8 @@ public class ActualizarDatos {
      * @param observadores, ArrayList de tipo Observador
      */
     public void notificar(ArrayList<Observador> observadores) {
-        for (Observador o : observadores) {
+        observadores.stream().forEach(o -> {
             o.update();
-        }
+        });
     }
 }

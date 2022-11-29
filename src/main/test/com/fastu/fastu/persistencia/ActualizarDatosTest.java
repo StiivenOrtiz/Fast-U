@@ -18,7 +18,10 @@ class ActualizarDatosTest {
         ArrayList<Cliente> clientesTest;
         ActualizarDatos actualizarDatos = new ActualizarDatos();
         RegistroUsuario registroUsuario = new RegistroUsuario();
-        registroUsuario.registrarUsuario(Nombre, correo, pw);
+        LecturaDatosClientes lecturaDatosClientes = new LecturaDatosClientes();
+        if (!lecturaDatosClientes.buscarCliente("test@javeriana.edu.co", "PwTest")){
+            registroUsuario.registrarUsuario(Nombre, correo, pw);
+        }
         clientesTest = actualizarDatos.TokenizarArray();
         boolean actualiza = actualizarDatos.actualizarDatosEspecificos(clientesTest, "Test", "Test2", "test@javeriana.edu.co", "test2@javeriana.edu.co", "PwTest", "PwTest2");
         assertTrue(actualiza);
@@ -33,7 +36,7 @@ class ActualizarDatosTest {
         ActualizarDatos actualizarDatos = new ActualizarDatos();
         RegistroUsuario registroUsuario = new RegistroUsuario();
         LecturaDatosClientes lecturaDatosClientes = new LecturaDatosClientes();
-        if (!lecturaDatosClientes.buscarCliente("test@javeriana.edu.co", "PwTest")) {
+        if (!lecturaDatosClientes.buscarCliente("test@javeriana.edu.co", "PwTest")){
             registroUsuario.registrarUsuario(Nombre, correo, pw);
         }
         clientesTest = actualizarDatos.TokenizarArray();
