@@ -10,11 +10,13 @@ public class MementoProductoTest {
     private final Producto estado = new Producto("arroz", 2000, "arozz :)", null);
 
     @Test
-    public void pruebaMementoP(MementoProducto m) {
+    public void pruebaMementoP() {
+
+        MementoProducto m;
         m = new MementoProducto(estado);
 
         Producto estado2 = m.getEstado();
 
-        assertEquals(estado2, estado);
+        assertEquals("arroz", estado2.getNombre());
     }
 }

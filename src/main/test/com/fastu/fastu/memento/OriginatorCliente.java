@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OriginatorCliente {
 
     @Test
-    public void pruebeOriginator(OriginatorCliente o) {
+    public void pruebeOriginator() {
+
+        OriginatorCliente o;
 
         Cliente estado = new Cliente();
 

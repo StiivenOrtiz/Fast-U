@@ -125,9 +125,7 @@ public class PerfilUsuarioController implements Controller, SujetoObservable {
             this.nombre = NombreNuevo;
             this.correo = CorreoNuevo;
             this.contrasena = ContrasenaNueva;
-            cliente.setNombreCompleto(NombreNuevo);
-            cliente.setCorreo(CorreoNuevo);
-            cliente.setContrasena(ContrasenaNueva);
+
         }
 
         originatorCliente.setEstado(cliente);

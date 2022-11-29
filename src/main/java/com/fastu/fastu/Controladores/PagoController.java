@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * Clase para controlar la pantalla para el pago de productos
  */
-public class PagoController extends ControllerAuxPago implements Initializable {
+public class PagoController implements Initializable, Controller {
     private final String[] metodosPago = {"Efectivio", "Tarjeta"};
     PedirFavorController pedirFavorController;
     String tipoPagoAUX = null;
@@ -46,6 +47,7 @@ public class PagoController extends ControllerAuxPago implements Initializable {
     private Label idMensajes;
     @FXML
     private Label prueba;
+    private Stage stage;
 
     /**
      * Obtener la seleccion del ChoiceBox
@@ -163,5 +165,10 @@ public class PagoController extends ControllerAuxPago implements Initializable {
 
     public void getTarjeta() {
         numTarjeta = idTarjeta.getText();
+    }
+
+    @Override
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 }

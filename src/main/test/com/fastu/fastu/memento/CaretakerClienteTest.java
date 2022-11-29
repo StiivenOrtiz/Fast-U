@@ -8,8 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CaretakerClienteTest {
 
     @Test
-    public void pruebaDeCaretaker(CaretakerCliente m) {
+    public void pruebaDeCaretaker() {
 
+        CaretakerCliente m = new CaretakerCliente();
         Cliente cliente = new Cliente();
         cliente.setNombreCompleto("fabian");
         cliente.setCorreo("fab@javeriana.edu.co");
@@ -17,7 +18,7 @@ public class CaretakerClienteTest {
         MementoCliente mem = new MementoCliente(cliente);
         m.addMemento(mem);
         Cliente cliente1 = new Cliente();
-        cliente1 = m.getMemento(1).getEstado();
+        cliente1 = m.getMemento(0).getEstado();
 
         assertEquals("fabian", cliente1.getNombreCompletos());
     }
