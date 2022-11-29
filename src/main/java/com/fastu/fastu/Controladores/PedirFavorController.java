@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Clase para controlar la pantalla de favores
+ */
 public class PedirFavorController implements Controller {
     Stage stage;
     @FXML
@@ -25,17 +28,31 @@ public class PedirFavorController implements Controller {
     @FXML
     private Button botonDevolver;
 
+    /**
+     * Establece un elemento set en la variable stage de esta clase
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-
+    /**
+     * para el boton devolver, cambia de pantalla al menu
+     *
+     * @param event
+     */
     @FXML
     void Devolverse(ActionEvent event) {
         Controller.cargarPantalla("Menu", this.stage);
     }
 
+    /**
+     * para el boton, cambia de pantalla a pago
+     *
+     * @param event
+     */
     @FXML
     void BotonRegistrar(ActionEvent event) {
         Controller.cargarPantalla("Pago", this.stage);

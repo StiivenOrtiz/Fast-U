@@ -1,5 +1,8 @@
 package com.fastu.fastu.observador;
 
 public interface SujetoObservable {
-    void notificar(); //avisar que estan actualizando datos
+    /**
+     * avisar que estan actualizando datos
+     */
+    void notificar();
 }

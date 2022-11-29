@@ -5,10 +5,21 @@ public abstract class Datos {
     private String correo = "";
     private String contrasena = "";
 
+    /**
+     * Constructo Datos
+     *
+     * @param nombreCompleto
+     * @param correo
+     * @param contrasena
+     */
     Datos(String nombreCompleto, String correo, String contrasena) {
         this.nombreCompleto = nombreCompleto;
         this.correo = correo;
         this.contrasena = contrasena;
+    }
+
+    public Datos() {
+
     }
 
     public String getContrasena() {

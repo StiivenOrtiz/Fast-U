@@ -21,6 +21,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Clase para controlar la pantalla de la tienda
+ */
 public class PantallaTiendaController implements Controller {
     Stage stage;
     @FXML
@@ -43,16 +46,31 @@ public class PantallaTiendaController implements Controller {
     private Button botonRegresar;
     private Tienda tienda = null;
 
+    /**
+     * Establece un elemento set en la variable stage de esta clase
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
+    /**
+     * para el boton volver, cambia de pantalla al menu
+     *
+     * @param event
+     */
     @FXML
     void regresar(ActionEvent event) {
         Controller.cargarPantalla("Menu", this.stage);
     }
 
+    /**
+     * Carga los datos e información de la tienda recibida
+     *
+     * @param tienda
+     */
     public void cargarTienda(Tienda tienda) {
         this.tienda = tienda;
         if (this.tienda != null) {

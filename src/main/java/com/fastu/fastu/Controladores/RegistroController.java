@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Clase para controlar la pantalla de registro
+ */
 public class RegistroController implements Controller {
     static String Nombre;
     static String correo;
@@ -25,17 +28,31 @@ public class RegistroController implements Controller {
     @FXML
     private TextField NombreCompleto;
 
+    /**
+     * Establece un elemento set en la variable stage de esta clase
+     *
+     * @param stage
+     */
+
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
+    /**
+     * Obtiene los datos de un cliente y los guarda en variable locales de la clase
+     */
     void obtenerDatos() {
         Nombre = NombreCompleto.getText();
         correo = Correo.getText();
         pw = Contrasena.getText();
     }
 
+    /**
+     * para el boton de registrar, si este se logra registrar cambia a la pantalla de menu, de lo contrario se le notifica al usuario
+     *
+     * @param event
+     */
     @FXML
     void BotonRegistrar(ActionEvent event) {
         obtenerDatos();
@@ -53,6 +70,11 @@ public class RegistroController implements Controller {
         }
     }
 
+    /**
+     * Getter para nombre
+     *
+     * @return
+     */
     public String getNombre() {
         return Nombre;
     }
@@ -69,6 +91,11 @@ public class RegistroController implements Controller {
         RegistroController.correo = correo;
     }
 
+    /**
+     * Getter para retornar la contraseña del objeto
+     *
+     * @return contraseña
+     */
     public String getPw() {
         return pw;
     }

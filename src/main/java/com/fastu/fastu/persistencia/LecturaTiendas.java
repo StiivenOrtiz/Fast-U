@@ -11,10 +11,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LecturaTiendas {
+    /**
+     * Carga las tienda con sus productos
+     *
+     * @return lista de los productos de cada tienda
+     * @throws IOException
+     */
     public ArrayList<Tienda> cargarTiendas() throws IOException {
         ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("datosTiendas.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(Constantes.nombreDatosTiendas));
             String cadena;
             int productos = 0;
             Tienda tiendaAux = null;

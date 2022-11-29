@@ -13,6 +13,13 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class LecturaHistorial {
+    /**
+     * Lee el historial de pedidos del archivo historial.txt y lo compara con el correo recibido como parametro
+     *
+     * @param correo correo a buscar en el historial.txt
+     * @return ArrayList<Pedido> con todos los pedidos encontrados en el archivo de texto
+     * @throws IOException
+     */
     public ArrayList<Pedido> leerHistorialPedidos(String correo) throws IOException {
         ArrayList<Pedido> datosObtenidos = new ArrayList<>();
         try (Scanner datosini = new Scanner(Paths.get(Constantes.nombreHistorial))) {
@@ -21,7 +28,7 @@ public class LecturaHistorial {
                 String linea = datosini.nextLine();
                 String[] pedazo = linea.split(",");
                 if (pedazo[3].equals(correo)) {
-                    datosObtenidos.add(new Pedido(pedazo[0], pedazo[1], pedazo[2]));
+                    datosObtenidos.add(new Pedido(pedazo[0], pedazo[1], pedazo[2], pedazo[3]));
                 }
             }
             return datosObtenidos;
@@ -32,6 +39,11 @@ public class LecturaHistorial {
         }
     }
 
+    /**
+     * Lee el historial de pedidos del archivo historial.txt
+     *
+     * @return ArrayList<Pedido> con todos los pedidos encontrados en el archivo de texto
+     */
     public ArrayList<Pedido> cargarHistorial() {
         Pedido objeto;
         ArrayList<Pedido> pedidos = new ArrayList();

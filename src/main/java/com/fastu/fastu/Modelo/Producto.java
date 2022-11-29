@@ -6,6 +6,14 @@ public class Producto {
     private String descripcion;
     private String imagen;
 
+    /**
+     * Constructor de Producto
+     *
+     * @param nombre
+     * @param precio
+     * @param descripcion
+     * @param imagen
+     */
     public Producto(String nombre, float precio, String descripcion, String imagen) {
         this.nombre = nombre;
         this.precio = precio;
@@ -44,6 +52,5 @@ public class Producto {
     public void setImagenes(String imagen) {
         this.imagen = imagen;
     }
-
 
 }

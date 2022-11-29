@@ -1,17 +1,26 @@
-package com.fastu.fastu.persistencia;
+package com.fastu.fastu.logica;
 
 import com.fastu.fastu.Controladores.HistorialController;
 import com.fastu.fastu.Controladores.PerfilUsuarioController;
 import com.fastu.fastu.Controladores.RegistroController;
 import com.fastu.fastu.Modelo.Cliente;
 import com.fastu.fastu.Util.Constantes;
+import com.fastu.fastu.observador.Observador;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
+/**
+ * Clase para manejar la actualización de datos desde el perfil del usuario
+ */
 public class ActualizarDatos {
+    /**
+     * Tokeniza el archivo de datospersonales en un nuevo arreglo de tipo Cliente
+     *
+     * @return
+     */
     public ArrayList<Cliente> TokenizarArray() {
         Cliente objeto;
         ArrayList<Cliente> clientes = new ArrayList<>();
@@ -36,6 +45,18 @@ public class ActualizarDatos {
         return clientes;
     }
 
+    /**
+     * Actualiza los datos del cliente
+     *
+     * @param clientes
+     * @param nombre
+     * @param NombreNuevo
+     * @param correo
+     * @param CorreoNuevo
+     * @param contrasena
+     * @param ContrasenaNueva
+     * @return boolean, True si se cambiaron los datos, false de lo contrario
+     */
     public boolean actualizarDatosEspecificos(ArrayList<Cliente> clientes, String nombre, String NombreNuevo, String correo, String CorreoNuevo, String contrasena, String ContrasenaNueva) {
         RegistroController registro = new RegistroController();
         HistorialController historial = new HistorialController();
@@ -61,6 +82,11 @@ public class ActualizarDatos {
         return false;
     }
 
+    /**
+     * guarda los datos nuevos en archivo txt nuevo
+     *
+     * @param clientes
+     */
     public void guardarDatos(ArrayList<Cliente> clientes) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(Constantes.nombreDatosClientes));
@@ -76,4 +102,14 @@ public class ActualizarDatos {
         }
     }
 
+    /**
+     * Notifica y realiza update a cada uno de los observadores existentes
+     *
+     * @param observadores, ArrayList de tipo Observador
+     */
+    public void notificar(ArrayList<Observador> observadores) {
+        for (Observador o : observadores) {
+            o.update();
+        }
+    }
 }
