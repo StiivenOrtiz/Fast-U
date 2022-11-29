@@ -5,9 +5,12 @@ import com.fastu.fastu.persistencia.RegistroUsuario;
 
 import java.io.IOException;
 
-
+/**
+ * Clase para la Fachada del manejo de usuarios
+ */
 public class UsuariosFachada {
     /**
+     * Busca los datos del cliente en archivo de datos personales por correo y contraseña
      *
      * @param correo
      * @param contrasena
@@ -20,6 +23,7 @@ public class UsuariosFachada {
     }
 
     /**
+     * Registra un nuevo usuario en el archivo txt de datospersonales
      *
      * @param nombre
      * @param correo

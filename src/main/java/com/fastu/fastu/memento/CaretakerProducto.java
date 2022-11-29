@@ -2,30 +2,34 @@ package com.fastu.fastu.memento;
 
 import java.util.ArrayList;
 
-/**(ENTER)
- *
+/**
+ * (ENTER)
+ * <p>
  * Almacena los estados del un cliente en una lista de estados de productos
- *
  */
 
 public class CaretakerProducto {
     private final ArrayList<MementoProducto> mementos = new ArrayList<>();
-    /**(ENTER)
-     *
+
+    /**
+     * (ENTER)
+     * <p>
      * agrega un elemento de memento producto a la lista
-     * @Param m
      *
+     * @Param m
      */
 
     public void addMemento(MementoProducto m) {
         mementos.add(m);
     }
 
-    /**(ENTER)
-     *
+    /**
+     * (ENTER)
+     * <p>
      * obtiene un elemento de la lista de mementoProducto
-     * @Param m
+     *
      * @return indice para la lista de memento
+     * @Param m
      */
 
     public MementoProducto getMemento(int index) {

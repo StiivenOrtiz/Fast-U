@@ -1,49 +1,51 @@
 package com.fastu.fastu.memento;
 
-import com.fastu.fastu.Modelo.Cliente;
 import com.fastu.fastu.Modelo.Producto;
 
-/**(ENTER)
- *
+/**
+ * (ENTER)
+ * <p>
  * Clase encargada de guardar la informacion del objeto estado
- *
  */
 
 public class OriginatorProducto {
 
     private static Producto estado;
 
-    /**(ENTER)
+    /**
+     * (ENTER)
+     * <p>
+     * crea una instancia de mementoProducto con el estado que vamos a guardar
      *
+     * @return MementoProducto(estado)
+     */
+
+    public static MementoProducto guardar() {
+        return new MementoProducto(estado);
+    }
+
+    /**
+     * (ENTER)
+     * <p>
      * regresa el estdo de un Producto
-     * @return estado
      *
+     * @return estado
      */
 
     public Producto getEstado() {
         return estado;
     }
 
-    /**(ENTER)
-     *
+    /**
+     * (ENTER)
+     * <p>
      * establece el estado de cliente en el objeto Producto
-     * @param estado
      *
+     * @param estado
      */
 
     public void setEstado(Producto estado) {
-        this.estado = estado;
-    }
-
-    /**(ENTER)
-     *
-     * crea una instancia de mementoProducto con el estado que vamos a guardar
-     * @return MementoProducto(estado)
-     *
-     */
-
-    public static MementoProducto guardar() {
-        return new MementoProducto(estado);
+        OriginatorProducto.estado = estado;
     }
 
     /**(ENTER)

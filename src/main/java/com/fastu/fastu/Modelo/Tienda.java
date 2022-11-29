@@ -12,6 +12,17 @@ public class Tienda extends Datos {
     private String imagenTienda;
     private String tipoTienda;
 
+    /**
+     * Constructor de Tienda
+     *
+     * @param nombresCompletos
+     * @param correo
+     * @param contrasena
+     * @param dueno
+     * @param nombreTienda
+     * @param imagenTienda
+     * @param tipoTienda
+     */
     public Tienda(String nombresCompletos, String correo, String contrasena, String dueno, String nombreTienda, String imagenTienda, String tipoTienda) {
         super(nombresCompletos, correo, contrasena);
         this.dueno = dueno;

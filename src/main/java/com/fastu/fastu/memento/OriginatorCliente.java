@@ -2,50 +2,57 @@ package com.fastu.fastu.memento;
 
 import com.fastu.fastu.Modelo.Cliente;
 
-/**(ENTER)
- *
+/**
+ * (ENTER)
+ * <p>
  * Clase encargada de guardar la informacion del objeto estado
  */
 
 public class OriginatorCliente {
 
     private Cliente estado;
-    /**(ENTER)
-     *
+
+    /**
+     * (ENTER)
+     * <p>
      * regresa el estdo de un cliente
-     * @return estado
      *
+     * @return estado
      */
 
     public Cliente getEstado() {
         return estado;
     }
 
-    /**(ENTER)
-     *
+    /**
+     * (ENTER)
+     * <p>
      * establece el estado de cliente en el objeto cliente
-     * @param estado
      *
+     * @param estado
      */
 
     public void setEstado(Cliente estado) {
         this.estado = estado;
     }
 
-    /**(ENTER)
-     *
+    /**
+     * (ENTER)
+     * <p>
      * crea una instancia de mementoCliente con el estado que vamos a guardar
-     * @return MementoCliente(estado)
      *
+     * @return MementoCliente(estado)
      */
 
     public MementoCliente guardar() {
         return new MementoCliente(estado);
     }
 
-    /**(ENTER)
-     *
+    /**
+     * (ENTER)
+     * <p>
      * restaura el estado del objeto m
+     *
      * @param m
      */
 

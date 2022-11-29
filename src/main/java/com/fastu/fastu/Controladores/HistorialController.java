@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase para controlar la pantalla del Historial del usuario
+ */
 public class HistorialController implements Controller, Observador {
     static String correoa;
     RegistroController registro = new RegistroController();
@@ -35,18 +38,31 @@ public class HistorialController implements Controller, Observador {
     @FXML
     private TableColumn Fecha;
 
+    /**
+     * Estable un setter para recibir un nuevo scenario
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
+    /**
+     * función que recibe la notificación del Observador para llamar a actualizar Historial
+     */
     @Override
     public void update() {
         System.out.println("Actualizando historial");
         actualizarHistorial();
     }
 
-
+    /**
+     * Boton para eliminar todo el historial del usuario con el correo correspondiente
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void BotonEliminar(ActionEvent event) throws IOException {
         cargarHistorial();
@@ -54,11 +70,19 @@ public class HistorialController implements Controller, Observador {
         TABLA.getItems().clear();
     }
 
+    /**
+     * Boton para regresar a la panttalla PerfilUsuario
+     *
+     * @param event
+     */
     @FXML
     private void BotonRegresar(ActionEvent event) {
         Controller.cargarPantalla("PerfilUsuario", this.stage);
     }
 
+    /**
+     * Funcion que muestr el estado actual del historial de un cliente
+     */
     public void MostrarHistorial() {
         RegistroController registro = new RegistroController();
         HistorialFachada historialFachada = new HistorialFachada();
@@ -75,6 +99,9 @@ public class HistorialController implements Controller, Observador {
         this.Estado.setCellValueFactory(new PropertyValueFactory("estado"));
     }
 
+    /**
+     * Boton para cargar el Historial en un nuevo ArrayList de tipo Pedido
+     */
     public void cargarHistorial() {
         try {
             HistorialFachada historialFachada = new HistorialFachada();
@@ -84,6 +111,9 @@ public class HistorialController implements Controller, Observador {
         }
     }
 
+    /**
+     * Guarda el nuevo historial con el nuevo correo
+     */
     public void guardarHistorial() {
         try {
             HistorialFachada historialFachada = new HistorialFachada();
@@ -95,6 +125,11 @@ public class HistorialController implements Controller, Observador {
         this.pedidos.clear();
     }
 
+    /**
+     * Agrega una nueva compra realizada en el archivo del historial
+     *
+     * @param pedido
+     */
     public void agregarEnHistorial(Pedido pedido) {
         try {
             HistorialFachada historialFachada = new HistorialFachada();
@@ -105,6 +140,9 @@ public class HistorialController implements Controller, Observador {
         }
     }
 
+    /**
+     * Actualiza el nuevo historial con los nuevos datos
+     */
     public void actualizarHistorial() {
         cargarHistorial();
         this.correon = registro.getCorreo();
@@ -118,6 +156,11 @@ public class HistorialController implements Controller, Observador {
         pedidos.clear();
     }
 
+    /**
+     * Setter para recibir el Correoantiguo
+     *
+     * @param correoa
+     */
     public void setCorreoa(String correoa) {
         HistorialController.correoa = correoa;
     }

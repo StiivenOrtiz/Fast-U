@@ -14,8 +14,17 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-/*creador factory de pantallas y controllers */
+/**
+ * creador factory de pantallas y controllers
+ */
 public interface CargadorPantallas {
+    /**
+     * Encargado de llevar a cabo la acción de cargar una pantalla dado el stage y el nombre de la pantalla
+     *
+     * @param stage
+     * @param nombrePantalla
+     * @throws IOException
+     */
     static void cargarPantalla(Stage stage, String nombrePantalla) throws IOException {
         Controller controller;
 
@@ -76,6 +85,12 @@ public interface CargadorPantallas {
         nStage.show();
     }
 
+    /**
+     * En caso de cargar una pantalla de tienda, se pasará por parametro la tienda que se solicita
+     *
+     * @param tiendaSolicitada
+     * @throws IOException
+     */
     static void cargarTienda(String tiendaSolicitada) throws IOException {
         TiendasFachada tiendasFachada = new TiendasFachada();
         Tienda tienda = tiendasFachada.buscarTienda(tiendaSolicitada);

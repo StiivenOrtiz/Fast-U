@@ -1,7 +1,6 @@
 package com.fastu.fastu.Controladores;
 
-import com.fastu.fastu.Modelo.Pedido;
-//import com.fastu.fastu.comando.IOperacion;
+import com.fastu.fastu.fachada.RealizarPedidoFachada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,10 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.ResourceBundle;
 
+/**
+ * Clase para controlar la pantalla para el pago de productos
+ */
 public class PagoController extends ControllerAuxPago implements Initializable {
     private final String[] metodosPago = {"Efectivio", "Tarjeta"};
     PedirFavorController pedirFavorController;
@@ -24,18 +24,12 @@ public class PagoController extends ControllerAuxPago implements Initializable {
     String descripcion = "";
     String cambioPago = "";
     String numTarjeta = "";
-
-    ////////////////////////////////////////////////////////////////////////////
-
-    // BOTONES
     @FXML
     private Button idCancelar;
     @FXML
     private Button idEditar;
     @FXML
     private Button idRealizarPedido;
-
-    // TEXTFIELDS
     @FXML
     private TextField idDescripcion;
     @FXML
@@ -46,68 +40,36 @@ public class PagoController extends ControllerAuxPago implements Initializable {
     private TextField idNotas;
     @FXML
     private TextField idTarjeta;
-
-    // CHOICE BOX
     @FXML
     private ChoiceBox<String> idMetodoPago;
-
-    // LABELS
     @FXML
     private Label idMensajes;
     @FXML
     private Label prueba;
 
-    ////////////////////////////////////////////////////////////////////////////
-
+    /**
+     * Obtener la seleccion del ChoiceBox
+     *
+     * @param arg0 The location used to resolve relative paths for the root object, or
+     *             {@code null} if the location is not known.
+     * @param arg1 The resources used to localize the root object, or {@code null} if
+     *             the root object was not localized.
+     */
     @Override ////////// METER LOS DATOS EN LOS CHOICE BOX
     public void initialize(URL arg0, ResourceBundle arg1) {
         idMetodoPago.getItems().addAll(metodosPago);
         idMetodoPago.setOnAction(this::getTipoPago);
     }
 
-    //////// GUARDAR LOS VALORES SELECCIONADO POR EL USUARIO
-    public void getTipoPago(ActionEvent event) {
-        tipoPagoAUX = idMetodoPago.getValue();
-    }
-
-    // TEXTFIELDS
-    public void getDirEntrega() {
-        dirEntrega = idDireccion.getText();
-    }
-
-    public void getNotas() {
-        notas = idNotas.getText();
-    }
-
-    public void getDescripcion() {
-        descripcion = idDescripcion.getText();
-    }
-
-    public void getCambioPago() {
-        cambioPago = idDinero.getText();
-    }
-
-    public void getTarjeta() {
-        numTarjeta = idTarjeta.getText();
-    }
-
-    private void iniciarDatos() {
-        getDirEntrega();
-        getNotas();
-        getDescripcion();
-        getCambioPago();
-        getTarjeta();
-    }
-
-
-    // VERIFICANDO QUE TODOS LOS CAMPOS ESTEN LLENOS
-    // VERIFICAICON SE HACE CUANDO SE PRESIONE EL BOTON "REALIZAR PEDIDO"
-
-    // BOTON REALIZAR PEDIDO
+    /**
+     * Boton para realizar un pedido, el cual verifica  que todos los campos esten llenos
+     *
+     * @param event
+     */
     @FXML
     private void eventRealizarPedido(ActionEvent event) {
         iniciarDatos();
-        String met = metodosPago[1];
+
         if (dirEntrega == "" || descripcion == "") {
             idMensajes.setText("INGRESE LA DIRECCION Y/O DESCRIPCION");
         } else {
@@ -130,48 +92,76 @@ public class PagoController extends ControllerAuxPago implements Initializable {
                 }
             }
         }
-        int m = (int) Math.floor(Math.random() * 5);
-        String estado;
-
-        // 0 -> No realizado, 1 -> En preparación, 2 -> En trayecto, 3 -> Cancelado // 4 -> Entregado
-        switch (m) {
-            case 1:
-                estado = "En preparación";
-                break;
-            case 2:
-                estado = "En trayecto";
-                break;
-            case 3:
-                estado = "Cancelado";
-                break;
-            case 4:
-                estado = "Entregado";
-                break;
-            default:
-                estado = "No realizado";
-                break;
-        }
-
-        RegistroController registro = new RegistroController();
-        String fecha = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
-        Pedido ped = new Pedido(fecha, met, estado, registro.getCorreo());
-        HistorialController historialController = new HistorialController();
-        historialController.agregarEnHistorial(ped);
+        RealizarPedidoFachada realizarPedido = new RealizarPedidoFachada();
+        realizarPedido.registrarPedido();
     }
 
-    // BOTON EDITAR
+    /**
+     * Boton para editar la descripción del pedido
+     *
+     * @param event
+     */
     @FXML
     private void eventEditar(ActionEvent event) {
         Controller.cargarPantalla("PedirFavor", this.stage);
     }
 
-    // BOTON CANCELAR
+    /**
+     * Boton para cancelar el pedido realizado y regresar a la pantalla anterior
+     *
+     * @param event
+     */
     @FXML
     private void eventCancelar(ActionEvent event) {
         Controller.cargarPantalla("PedirFavor", this.stage);
     }
 
+    /**
+     * inicializar pedirFavorController
+     *
+     * @param pedirFavorController
+     */
     public void init(PedirFavorController pedirFavorController) {
         this.pedirFavorController = pedirFavorController;
+    }
+
+    /**
+     * inicializa los datos obtenidos de la pantalla
+     */
+    private void iniciarDatos() {
+        getDirEntrega();
+        getNotas();
+        getDescripcion();
+        getCambioPago();
+        getTarjeta();
+    }
+
+    /**
+     * Guarda los datos seleccionados por el usuario
+     *
+     * @param event
+     */
+    public void getTipoPago(ActionEvent event) {
+        tipoPagoAUX = idMetodoPago.getValue();
+    }
+
+    public void getDirEntrega() {
+        dirEntrega = idDireccion.getText();
+    }
+
+    public void getNotas() {
+        notas = idNotas.getText();
+    }
+
+    public void getDescripcion() {
+        descripcion = idDescripcion.getText();
+    }
+
+    public void getCambioPago() {
+        cambioPago = idDinero.getText();
+    }
+
+    public void getTarjeta() {
+        numTarjeta = idTarjeta.getText();
     }
 }

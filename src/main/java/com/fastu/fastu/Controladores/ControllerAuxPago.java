@@ -9,6 +9,11 @@ import javafx.stage.Stage;
 public class ControllerAuxPago implements Controller {
     Stage stage;
 
+    /**
+     * Estable un setter para recibir un nuevo scenario
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;

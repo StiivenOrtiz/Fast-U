@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-//oka xd
+/**
+ * Clase para controlar la pantalla del Menu
+ */
 public class MenuController implements Controller {
     Stage stage;
     @FXML
@@ -21,6 +23,11 @@ public class MenuController implements Controller {
     @FXML
     private Button papeleriaButton;
 
+    /**
+     * Establece un setter para recibir un nuevo scenario
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -28,6 +35,7 @@ public class MenuController implements Controller {
 
     /**
      * para el boton de papeleria, cambia de pantalla a la papeleria
+     *
      * @param event
      * @throws IOException
      */
@@ -38,6 +46,7 @@ public class MenuController implements Controller {
 
     /**
      * para el boton de restaurante, cambia de pantalla a restaurantes
+     *
      * @param event
      * @throws IOException
      */
@@ -48,6 +57,7 @@ public class MenuController implements Controller {
 
     /**
      * para el boton de tienda, cambia de pantalla a tiendas
+     *
      * @param event
      * @throws IOException
      */
@@ -56,6 +66,11 @@ public class MenuController implements Controller {
         cargarTienda("Tienda");
     }
 
+    /**
+     * Carga la pantalla de la tienda solicitada
+     *
+     * @param tiendaSolicitada
+     */
     private void cargarTienda(String tiendaSolicitada) {
         try {
             CargadorPantallas.cargarTienda(tiendaSolicitada);
@@ -68,9 +83,9 @@ public class MenuController implements Controller {
         this.stage.close();
     }
 
-
     /**
      * para el boton de favores, cambia de pantalla a favores
+     *
      * @param event
      */
     @FXML
@@ -80,6 +95,7 @@ public class MenuController implements Controller {
 
     /**
      * para el boton del usuarion, cambia de pantalla al perfil del usuario
+     *
      * @param event
      */
     @FXML

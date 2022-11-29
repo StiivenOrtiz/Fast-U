@@ -13,6 +13,16 @@ public class Pedido {
     private float calificacion;
     private String fecha;
 
+    /**
+     * Constructor de Pedido
+     *
+     * @param domiciliario
+     * @param estado
+     * @param prodcutos
+     * @param tienda
+     * @param calificacion
+     * @param fecha
+     */
     public Pedido(Datos domiciliario, String estado, ArrayList<Producto> prodcutos, String tienda, float calificacion, Date fecha) {
         this.domiciliario = domiciliario;
         this.productos = prodcutos;
@@ -92,9 +102,5 @@ public class Pedido {
 
     public void setCorreoSolicitante(String correoSolicitante) {
         this.correoSolicitante = correoSolicitante;
-    }
-
-    public void setCosto(String tipopago) {
-        this.tipopago = tipopago;
     }
 }

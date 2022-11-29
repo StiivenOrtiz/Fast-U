@@ -1,7 +1,0 @@
-JuanPerez,PIZPI,123
-Javier,Santana,123
-Juan,Jose,123
-Felipe,Jose,123
-Juan,JOSE,123
-Stiven,Pirlo,123
-Juan,LOPEZ,123

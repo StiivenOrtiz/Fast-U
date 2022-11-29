@@ -6,6 +6,15 @@ public class Domiciliario extends Datos {
     private boolean estado;
     private ArrayList<Pedido> pedidos;
 
+    /**
+     * Constructor Domiciliario
+     *
+     * @param nombresCompletos
+     * @param correo
+     * @param contrasena
+     * @param estado
+     * @param pedidos
+     */
     Domiciliario(String nombresCompletos, String correo, String contrasena, boolean estado, ArrayList<Pedido> pedidos) {
         super(nombresCompletos, correo, contrasena);
         this.estado = estado;

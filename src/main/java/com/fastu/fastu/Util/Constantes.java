@@ -22,7 +22,11 @@ public interface Constantes {
     /*NOMBRES CONSTANTES PARA LAS IMAGENES USADAS*/
     String logo = "logo.png";
 
+    /*CORREOS*/
+    String correoJaveriana = "@javeriana.edu.co";
+
     /**
+     * Obtiene el nombre del archivo fxml según el nombre de la pantalla
      *
      * @param nombrePantalla
      * @return el nombre del archivo.fxml de la pantalla que se le pasa por parametro

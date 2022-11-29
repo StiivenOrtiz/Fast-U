@@ -17,11 +17,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
 
-
+/**
+ * Clase no implementada para controlar la pantalla de quejas
+ */
 public class QuejasController {
 
-    Stage stage = new Stage();
-    private String descripcion;
     @FXML
     private final RadioButton check1;
     @FXML
@@ -32,6 +32,8 @@ public class QuejasController {
     private final Button enviar;
     @FXML
     private final TextArea especificar;
+    Stage stage = new Stage();
+    private String descripcion;
 
     public QuejasController(String descripcion, RadioButton check1, RadioButton check2, RadioButton check3, Button enviar, TextArea especificar) {
         this.descripcion = descripcion;
@@ -69,6 +71,11 @@ public class QuejasController {
         //"Problema de la aplicacion"
     }
 
+    /**
+     * Guarda la queja ingresada por el cliente en un archivo de texto
+     *
+     * @param event
+     */
 
     @FXML
     void BotonEnviar(ActionEvent event) throws IOException {

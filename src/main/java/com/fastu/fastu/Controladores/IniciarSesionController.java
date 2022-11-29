@@ -12,7 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * Clase para controlar la pantalla de inicio de sesión
+ */
 public class IniciarSesionController implements Controller {
     Stage stage;
     @FXML
@@ -26,13 +28,18 @@ public class IniciarSesionController implements Controller {
     @FXML
     private Button idBotonRegistro;
 
+    /**
+     * Establece un setter para recibir un nuevo scenario
+     *
+     * @param stage
+     */
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     /**
-     * toma el correo y contraseña ingresadas, llama a la fachada de usuarios
+     * Toma el correo y contraseña ingresadas, llama a la fachada de usuarios
      */
     public void leerArchivo() {
         String correo = idCorreo.getText();
@@ -54,14 +61,15 @@ public class IniciarSesionController implements Controller {
 
     @FXML
     /**
-     * para el boton "iniciar sesion"
+     * para el boton "iniciar sesion", cambiando de pantalla a iniciar sesión
      */
     void accionIniciarSesion(ActionEvent event) {
         leerArchivo();
     }
 
     /**
-     * cambia de pantalla
+     * cambia de pantalla a Registro
+     *
      * @param event
      */
     @FXML
